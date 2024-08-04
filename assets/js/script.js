@@ -1,8 +1,22 @@
 'use strict';
 /**
- * navbar toggle
+ * Form toggle functionality (sign-in/sign-up)
  */
+const btnSignIn = document.querySelector('.sign-in-btn');
+const btnSignUp = document.querySelector('.sign-up-btn');
+const signUp = document.querySelector('.sign-up');
+const signIn = document.querySelector('.sign-in');
 
+document.addEventListener('click', e => {
+  if (e.target === btnSignIn || e.target === btnSignUp) {
+    signIn.classList.toggle('active');
+    signUp.classList.toggle('active');
+  }
+});
+
+/**
+ * Navbar toggle functionality
+ */
 const navbar = document.querySelector("[data-navbar]");
 const navbarLinks = document.querySelectorAll("[data-nav-link]");
 const menuToggleBtn = document.querySelector("[data-menu-toggle-btn]");
@@ -12,19 +26,16 @@ menuToggleBtn.addEventListener("click", function () {
   this.classList.toggle("active");
 });
 
-for (let i = 0; i < navbarLinks.length; i++) {
-  navbarLinks[i].addEventListener("click", function () {
+navbarLinks.forEach(link => {
+  link.addEventListener("click", function () {
     navbar.classList.toggle("active");
     menuToggleBtn.classList.toggle("active");
   });
-}
-
-
+});
 
 /**
- * header sticky & back to top
+ * Header sticky & back to top button functionality
  */
-
 const header = document.querySelector("[data-header]");
 const backTopBtn = document.querySelector("[data-back-top-btn]");
 
@@ -39,39 +50,25 @@ window.addEventListener("scroll", function () {
 });
 
 /**
- * 
- * Reveal scroll
+ * Reveal elements on scroll
  */
-  document.addEventListener('DOMContentLoaded', function() {
-    function reveal() {
-      var reveals = document.querySelectorAll('.reveal');
-      for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 150;
-        if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add('active');
-        } else {
-          reveals[i].classList.remove('active');
-        }
+document.addEventListener('DOMContentLoaded', function() {
+  function reveal() {
+    const reveals = document.querySelectorAll('.reveal');
+    const windowHeight = window.innerHeight;
+    const elementVisible = 150;
+
+    reveals.forEach(reveal => {
+      const elementTop = reveal.getBoundingClientRect().top;
+      if (elementTop < windowHeight - elementVisible) {
+        reveal.classList.add('active');
+      } else {
+        reveal.classList.remove('active');
       }
-    }
-    window.addEventListener('scroll', reveal);
-    reveal();
-  });
+    });
+  }
 
-//cambio de formulario
-  const $btnSignIn= document.querySelector('.sign-in-btn'),
-      $btnSignUp = document.querySelector('.sign-up-btn'),  
-      $signUp = document.querySelector('.sign-up'),
-      $signIn  = document.querySelector('.sign-in');
-
-document.addEventListener('click', e => {
-    if (e.target === $btnSignIn || e.target === $btnSignUp) {
-        $signIn.classList.toggle('active');
-        $signUp.classList.toggle('active')
-    }
+  window.addEventListener('scroll', reveal);
+  reveal();
 });
-
-
 

@@ -1,14 +1,13 @@
 
 body {
     display: flex;
-    align-items: center;
     justify-content: center;
     background-image: url(../images/fondologin.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     color: #fff;
-    font-family: Roboto , sans-serif;
+    font-family: Roboto, sans-serif;
 }
 
 .container-form {
@@ -155,4 +154,37 @@ label{
 
 .file-input-wrapper button:hover {
     background-color: rgb(63, 63, 255);
+}
+/* Media Queries para dispositivos móviles */
+@media (max-width: 768px) {
+    .container-form {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .formulario {
+        width: 90%;
+        margin: 1rem;
+    }
+
+    .message {
+        padding: 0.5rem;
+    }
+
+    .message h2 {
+        font-size: 1.2rem;
+    }
+
+    .message button {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .formulario input {
+        width: 80%;
+    }
+
+    .formulario input[type="submit"] {
+        width: 80%;
+    }
 }
