@@ -13,52 +13,14 @@
   <!-- 
     - custom css link
   -->
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../css/style.css">
 
   <!-- 
     - google font link
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
-
-  <style>
-    /* Estilos para las animaciones */
-    .reveal {
-      opacity: 0;
-      transform: translateY(100px);
-      transition: all 0.6s ease;
-    }
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    #bg-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      filter: brightness(50%);
-    }
-    @media (min-width: 1200px) {
-      #bg-video {
-        object-fit: cover;
-      }
-    }
-    @media (min-width: 768px) {
-      #bg-video {
-        object-fit: cover;
-      }
-    }
-    @media (min-width: 480px) {
-      #bg-video {
-        object-fit: cover;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Rubik:wght@400;500;600;700&family=Shadows+Into+Light&display=swap" rel="stylesheet">    
 
 </head>
 
@@ -72,16 +34,15 @@
     <div class="container">
 
       <h1>
-        <a href="#" class="logo">EduCompa<span class="span">.</span></a>
+        <a href="../html/index.html" class="logo">EduCompa<span class="span">.</span></a>
       </h1>
 
       <nav class="navbar" data-navbar>
         <ul class="navbar-list">
 
           <li class="nav-item">
-            <a href="#home" class="navbar-link" data-nav-link><i class="bi bi-house"></i> Inicio</a>
+            <a href="../html/perfilUsuario.html" class="navbar-link" data-nav-link><i class="bi bi-people"></i> Perfil</a>
           </li>
-
           <li class="nav-item">
             <a href="#about" class="navbar-link" data-nav-link><i class="bi bi-backpack3"></i> Aula Virtual</a>
           </li>
@@ -93,19 +54,24 @@
           <li class="nav-item">
             <a href="#blog" class="navbar-link" data-nav-link><i class="bi bi-chat-dots-fill"></i> Chats</a>
           </li>
+          <li class="nav-item">
+            <a href="#blog" class="navbar-link" data-nav-link><i class="bi bi-controller"></i> Juegos</a>
+          </li>
+          <li class="nav-item">
+            <a href="#blog" class="navbar-link" data-nav-link><i class="bi bi-pen"></i> Refuerzo Avanzo</a>
+          </li>
 
           <li class="nav-item">
             <a href="#" class="navbar-link" data-nav-link></a>
           </li>
-
+          <li class="nav-item">
+            <a href="../html/login.html" class="navbar-link" data-nav-link><i class="bi bi-person"></i> Inicia sesion/Registrate</a>
+          </li>
         </ul>
       </nav>
 
       <div class="header-btn-group">
-    
-
-        <button href="" class="btn btn-hover">Inicia sesion/Registrarse</button>
-
+  
 
         <button class="nav-toggle-btn" aria-label="Toggle Menu" data-menu-toggle-btn>
           <span class="line top"></span>
@@ -127,9 +93,9 @@
         - #HERO
       -->
 
-      <section class="hero" id="home">
+      <section class="hero reveal" id="home">
         <video autoplay muted loop id="bg-video">
-          <source src="../assets/images/videoFondo3.mp4" type="video/mp4">
+          <source src="../images/videoFondo3.mp4" type="video/mp4">
         </video>
         <div class="container">
           <div class="hero-content reveal">
@@ -147,7 +113,7 @@
          -->
 
      <!-- Sección 1 -->
-<section class="section section-divider white cta reveal" style="background-image: url('../assets/images/librito2.jpg')">
+<section class="section section-divider white cta reveal" style="background-image: url('../images/librito2.jpg')">
   <div class="container">
       <div class="cta-content">
           <h2 class="h2 section-title">¡El Poder del Trabajo en Equipo!</h2>
@@ -160,8 +126,8 @@
   </div>
 </section>
 
-<!-- Sección 2 con estilo modificado -->
-<section class="section section-divider white cta reveal" style="background-image: url('../assets/images/libros.jpg');">
+<!-- Sección 2-->
+<section class="section section-divider white cta reveal" style="background-image: url('../images/libros.jpg');">
   <div class="container">
       <div class="cta-content" style="float: right;">
           <h2 class="h2 section-title">¡Exploración del Conocimiento!</h2>
@@ -174,8 +140,8 @@
   </div>
 </section>
 
-<!-- Sección 3 con texto modificado y estilo invertido -->
-<section class="section section-divider white cta reveal" style="background-image: url('../assets/images/educacion.jpg ');">
+<!-- Sección 3 -->
+<section class="section section-divider white cta reveal" style="background-image: url('../images/educacion.jpg ');">
   <div class="container">
       <div class="cta-content" style="float: left;">
           <h2 class="h2 section-title">¡Innovación Educativa!</h2>
@@ -197,19 +163,17 @@
     - #BACK TO TOP
   -->
 
-  <a href="#top" class="back-top-btn" aria-label="Back to top" data-back-top-btn>
-    <ion-icon name="chevron-up"></ion-icon>
-  </a>
+  <a href="#top" class="back-top-btn" aria-label="Back to topx" data-back-top-btn><i class="bi bi-arrow-up-short"></i></a>
 
   <!-- 
     - custom js link
   -->
-  <script src="../assets/js/script.js" defer></script>
+  <script src="../js/script.js" defer></script>
   
   <footer class="footer-distributed reveal">
     <div class="footer-left">
-    <img src="../assets/images/educompalogo.jpg" alt="" style="width: 150px; border-radius: 100%;">
-        <p class="footer-links">
+      <img src="../images/educompalogo.jpg" alt="" class="footer-logo">
+      <p class="footer-links">
             <a href="#">Home</a>
             |
             <a href="#">About</a>
@@ -225,8 +189,7 @@
     <div class="footer-center">
         <div>
             <i class="bi bi-map"></i>
-            <p><span>Ubicacion</span>
-                Colegio Don Bosco</p>
+            <p>Colegio Don Bosco</p>
         </div>
 
         <div>
@@ -234,7 +197,7 @@
             <p>503 7681-4348</p>
         </div>
         <div>
-            <i class="bi bi-envelope"></i>
+            <i class="bi bi-envelope"></i>  
             <p><a href="">estudiante20230698@cdb.edu.sv
             </a></p>
         </div>
@@ -257,9 +220,6 @@
   <!-- 
     - ionicon link
   -->
-  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-
 
 </body>
 
