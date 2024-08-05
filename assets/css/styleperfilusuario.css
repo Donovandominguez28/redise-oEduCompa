@@ -116,7 +116,7 @@
 }
 .perfil-usuario .opcciones-perfil button {
     border: 0;
-    padding: 8px 20px;
+    padding: 6px 6px;
     border-radius: 8px;
     background-color: #365b77;
     color: white;
@@ -165,7 +165,7 @@
     .perfil-usuario .opcciones-perfil {
         display: block;
         position: absolute;
-        right: 2rem;
+        right: 0.5rem;
         top: 40rem;
     }
     .perfil-usuario .bio-usuario {
@@ -175,7 +175,7 @@
         white-space: nowrap;
     }
     .perfil-usuario .titulo-usuario {
-        font-size: 4rem;
+        font-size: 3rem;
     }
     .perfil-usuario .portada-perfil {
         height: 45rem;
