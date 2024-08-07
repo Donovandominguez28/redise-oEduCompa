@@ -90,14 +90,14 @@
     padding-right: 1rem;
 }
 .perfil-usuario .titulo-usuario {
-    font-size: 2.3rem;
+    font-size: 3rem;
     white-space: nowrap;
     margin-bottom: .5rem;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 .perfil-usuario .bio-usuario {
-    font-size: 1em;
+    font-size: 2em;
     margin-bottom: .75rem;
 }
 .perfil-usuario .lista-perfil {
@@ -105,7 +105,7 @@
 }
 .perfil-usuario .lista-perfil li {
     display: inline-block;
-    font-size: 1em;
+    font-size: 2em;
     margin-right: 1rem;
 }
 
@@ -128,6 +128,7 @@
     list-style: none;
     margin-left: calc(200px + 8rem);
     width: calc(100% - 200px - 8rem);
+    font-size: 2rem;
 }
 .perfil-usuario .menu-perfil ul li {
     margin-right: 1rem;
@@ -170,7 +171,7 @@
         top: 40rem;
     }
     .perfil-usuario .bio-usuario {
-        font-size: 1em;
+        font-size: 2em;
         overflow:hidden;
         text-overflow: ellipsis;
         white-space: nowrap;

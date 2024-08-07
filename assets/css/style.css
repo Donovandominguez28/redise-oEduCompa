@@ -326,6 +326,336 @@ html {
   height: 100%;
 }
 
+:root {
+  /*========== Colors ==========*/
+  /*Color mode HSL(hue, saturation, lightness)*/
+  --white-color: hsl(170, 12%, 98%);
+  --gray-color: hsl(170, 4%, 60%);
+  --black-color: hsl(170, 12%, 8%);
+
+  /*========== Font and typography ==========*/
+  /*.5rem = 8px | 1rem = 16px ...*/
+  --body-font: "Bona Nova", serif;
+  --normal-font-size: .938rem;
+}
+
+/*========== Responsive typography ==========*/
+@media screen and (min-width: 1120px) {
+  :root {
+    --normal-font-size: 1rem;
+  }
+}
+
+/*=============== BASE ===============*/
+
+body {
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  background-color: var(--black-color);
+  color: var(--gray-color);
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== CARD aula ===============*/
+.containeraula {
+  display: grid;
+  margin-inline: 1.5rem;
+  padding-block: 5rem;
+}
+
+.card__containeraula {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 348px));
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 5px;
+}
+
+.card__articleaula {
+  position: relative;
+  background-color: var(--black-color);
+  border: 2px solid var(--gray-color);
+  padding: 3rem 1.5rem 1.5rem;
+  display: grid;
+  row-gap: 1rem;
+  overflow: hidden;
+  transition: background-color .6s;
+}
+
+.card__imgaula {
+  width: 200px;
+  justify-self: center;
+  filter: drop-shadow(0 8px 24px hsla(170, 12%, 8%, .1));
+  transition: transform .4s;
+}
+
+.card__dataaula {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  transition: transform .4s, opacity .4s;
+}
+
+.card__titleaula {
+  font-size: var(--normal-font-size);
+  font-weight: 400;
+}
+
+.card__bgaula {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.3);
+  z-index: -1;
+  transition: transform .4s;
+}
+
+.card__buttonaula {
+  background-color: var(--white-color);
+  padding: .75rem 1rem;
+  color: var(--black-color);
+  display: flex;
+  align-items: center;
+  column-gap: .4rem;
+  justify-self: center;
+  box-shadow: 0 8px 24px hsla(170, 12%, 8%, .1);
+  position: absolute;
+  bottom: -1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: transform .4s, opacity .4s;
+}
+
+.card__buttonaula i {
+  font-size: 1.25rem;
+  transition: transform .4s;
+}
+.card__buttonaula:hover i {
+  transform: translateX(.3rem);
+}
+
+/* Card animation */
+.card__articleaula:hover .card__imgaula {
+  transform: translateY(-1.5rem);
+}
+
+.card__articleaula:hover .card__dataaula {
+  transform: translateY(-4.5rem);
+  opacity: 0;
+}
+
+.card__articleaula:hover {
+  background-color: transparent;
+}
+
+.card__articleaula:hover .card__bgaula {
+  transform: scale(1);
+}
+
+.card__articleaula:hover .card__buttonaula {
+  transform: translateY(-3.75rem);
+  opacity: 1;
+  pointer-events: initial;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 300px) {
+  .containeraula {
+    margin-inline: 1rem;
+  }
+
+  .card__containeraula {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* For large devices */
+@media screen and (min-width: 1120px) {
+  .containeraula {
+    height: 100vh;
+    display: grid;
+    align-items: center;
+  }
+
+  .card__imgaula {
+    width: 220px;
+  }
+}
+.wrapperavanzo {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.containeravanzo {
+  height: 400px;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: start;
+}
+
+.cardavanzo {
+  width: 80px;
+  border-radius: .75rem;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 2rem;
+  margin: 0 10px;
+  display: flex;
+  align-items: flex-end;
+  transition: .6s cubic-bezier(.28,-0.03,0,.99);
+  box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+  background-position: center; /* Añadido */
+  position: relative; /* Añadido */
+  filter: brightness(0.7); /* Añadido */
+}
+
+.cardavanzo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Añadido */
+  z-index: 1;
+}
+
+.cardavanzo > .rowavanzo {
+  color: white;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative; /* Añadido */
+  z-index: 2; /* Añadido */
+}
+
+.cardavanzo > .rowavanzo > .iconnn {
+  background: #223;
+  color: white;
+  border-radius: 100%;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 15px;
+  font-size: 2rem; /* Aumentado */
+}
+
+.cardavanzo > .rowavanzo > .descriptionavanzo {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  height: 80px;
+  width: 520px;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: .3s;
+  transition: all .3s ease;
+}
+
+.descriptionavanzo p {
+  color: #ffffff; /* Cambiado */
+  padding-top: 5px;
+  font-size: 1.5rem; /* Aumentado */
+}
+
+.descriptionavanzo h4 {
+  text-transform: uppercase;
+  font-size: 1.5rem; /* Aumentado */
+  color: #ffffff; /* Cambiado */
+}
+
+.descriptionavanzo a {
+  color: #ffffff; /* Añadido */
+  font-size: 1.5rem; /* Añadido */
+  text-decoration: underline; /* Añadido */
+  margin-top: 1px; /* Añadido */
+}
+
+input {
+  display: none;
+}
+
+input:checked + label {
+  width: 600px;
+}
+
+input:checked + label .descriptionavanzo {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+label[for="c1"] {
+  background-image: url('../images/matematicas.jpg');
+}
+label[for="c2"] {
+  background-image: url('../images/lenguaje.jpg');
+}
+label[for="c3"] {
+  background-image: url('../images/sociales.jpg');
+}
+label[for="c4"] {
+  background-image: url('../images/ciencias.jpg');
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .containeravanzo {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .cardavanzo {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  input:checked + label {
+    width: 100%;
+  }
+
+  .cardavanzo > .rowavanzo > .descriptionavanzo {
+    width: 100%;
+  }
+
+  .cardavanzo > .rowavanzo > .iconnn {
+    margin: 5px;
+    font-size: 1.2rem;
+  }
+
+  .descriptionavanzo p {
+    font-size: 1.2rem; /* Ajustado */
+  }
+
+  .descriptionavanzo h4 {
+    font-size: 1.2rem; /* Ajustado */
+  }
+
+  .descriptionavanzo a {
+    font-size: 1.2rem; /* Añadido */
+  }
+}
+
+
 /*cards de los juegos*/
 .cardj {
   display: flex;

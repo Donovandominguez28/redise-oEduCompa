@@ -79,6 +79,38 @@ body {
   .buttonnn:hover {
     background-color: #02bfa4;
   }
+
+  .letra {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+    margin: 5px;
+    text-align: center;
+    line-height: 30px;
+}
+.pintar {
+    background-color: green;
+    color: white;
+}
+.pintarError {
+    background-color: red;
+    color: white;
+}
+#letras {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 500px;
+}
+.letra-boton {
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
   
   /* Media Queries */
   @media (max-width: 768px) {
