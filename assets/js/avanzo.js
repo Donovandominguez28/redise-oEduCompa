@@ -119,14 +119,6 @@ function optionSelected(answer){
     clearInterval(counter); //clear counter
     clearInterval(counterLine); //clear counterLine
 
-
-
-
-
-
-
-
-
     let userAns = answer.textContent; //getting user selected option
     let correcAns = questions[que_count].answer; //getting correct answer from array
     const allOptions = option_list.children.length; //getting all option items
@@ -165,7 +157,7 @@ function showResult(){
     quiz_box.classList.remove("activeQuiz"); //hide quiz box
     result_box.classList.add("activeResult"); //show result box
     const scoreText = result_box.querySelector(".score_text");
-    if (userScore > 3){ // if user scored more than 3
+    if (userScore > 7){ // if user scored more than 3
         //creating a new span tag and passing the user score number and total question number
         let scoreTag = '<span> y  Felicidades! 🎉, Tienes <p>'+ userScore +'</p> de <p>'+ questions.length +'</p></span>';
         scoreText.innerHTML = scoreTag;  //adding new span tag inside score_Text
@@ -214,7 +206,7 @@ function startTimerLine(time){
     function timer(){
         time += 1; //upgrading time value with 1
         time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-        if(time > 549){ //if time value is greater than 549
+        if(time > 539){ //if time value is greater than 549
             clearInterval(counterLine); //clear counterLine
         }
     }

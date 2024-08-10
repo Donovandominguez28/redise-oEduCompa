@@ -214,6 +214,7 @@ body.active { overflow: hidden; }
 .card {
   width: 280px;
   height: 360px;
+  border-radius: 30% ;
   background: #fff;
   display: flex;
   align-items: flex-end;
@@ -807,18 +808,22 @@ img {
 }
 
 .card__img {
-  width: 328px;
+  width: 100%;
+  height: auto;
+  max-width: 348px;
   border-radius: 1.5rem;
+  object-fit: cover;
 }
 
 .card__data {
-  width: 280px;
+  width: 80%;
+  max-width: 316px;
   background-color: var(--container-color);
   padding: 1.5rem 2rem;
   box-shadow: 0 8px 24px hsla(0, 0%, 0%, .15);
   border-radius: 1rem;
   position: absolute;
-  bottom: -9rem;
+  top: -9rem; /* Inicialmente posicionado fuera de la vista, hacia arriba */
   left: 0;
   right: 0;
   margin-inline: auto;
@@ -866,34 +871,34 @@ img {
 }
 
 .card__article:not(:hover) .card__data {
-  animation: remove-data 1s forwards;
+  animation: hide-data 1s forwards;
 }
 
 /* Card animation */
 @keyframes show-data {
   50% {
-    transform: translateY(-10rem);
+    transform: translateY(10rem); /* Baja más para ser visible */
   }
   100% {
-    transform: translateY(-7rem);
+    transform: translateY(7rem); /* Ajusta la posición final */
+  }
+}
+
+@keyframes hide-data {
+  0% {
+    transform: translateY(7rem); /* Comienza en la posición visible */
+  }
+  50% {
+    transform: translateY(10rem); /* Sube a la mitad del camino */
+  }
+  100% {
+    transform: translateY(-9rem); /* Se esconde hacia arriba */
   }
 }
 
 @keyframes remove-overflow {
   to {
     overflow: initial;
-  }
-}
-
-@keyframes remove-data {
-  0% {
-    transform: translateY(-7rem);
-  }
-  50% {
-    transform: translateY(-10rem);
-  }
-  100% {
-    transform: translateY(.5rem);
   }
 }
 
@@ -938,10 +943,11 @@ img {
     grid-template-columns: repeat(3, 1fr);
   }
   .card__img {
-    width: 348px;
+    max-width: 348px;
   }
   .card__data {
-    width: 316px;
+    width: 80%;
+    max-width: 316px;
     padding-inline: 2.5rem;
   }
 }
@@ -1293,11 +1299,14 @@ footer {
   background-color: var(--white);
   box-shadow: var(--shadow-1);
   animation: slideIn 0.5s ease-out forwards;
+  z-index: 1000;
+
 }
 
 @keyframes slideIn {
   0% { transform: translateY(0); }
   100% { transform: translateY(100%); }
+  
 }
 
 .header .container {
