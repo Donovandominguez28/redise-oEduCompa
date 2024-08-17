@@ -1,6 +1,8 @@
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
+
     let formData = new FormData(this);
+
     fetch('../php/register.php', {
         method: 'POST',
         body: formData
@@ -10,7 +12,7 @@ document.getElementById('registerForm').addEventListener('submit', function(even
         if (data.status === 'error') {
             mostrarNotificacion('Error', data.message, 'error');
         } else {
-            mostrarNotificacion('Éxito', 'Registro exitoso.', 'exito');
+            mostrarNotificacion('Éxito', 'Registro exitoso. ', 'exito');
             setTimeout(() => {
                 window.location.href = data.redirect;
             }, 2000);
@@ -24,7 +26,9 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
+
     let formData = new FormData(this);
+
     fetch('../php/login.php', {
         method: 'POST',
         body: formData
@@ -46,6 +50,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     });
 });
 
+function validateEmail(email) {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+}
+
+function esImagenValida(archivo) {
+    const tiposValidos = ['image/jpeg', 'image/png', 'image/gif'];
+    return tiposValidos.includes(archivo.type);
+}
 
 function mostrarNotificacion(titulo, descripcion, tipo) {
     const contenedorToast = document.getElementById('contenedor-toast');

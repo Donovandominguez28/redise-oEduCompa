@@ -109,6 +109,5 @@ let questions = [
         "Una descripción detallada"
       ]
     }
-    
   ];
   
