@@ -72,3 +72,13 @@ document.addEventListener('DOMContentLoaded', function() {
   reveal();
 });
 
+function confirmDelete(idMural) {
+  if (confirm('¿Estás seguro de que deseas eliminar esta publicación?')) {
+      window.location.href = '../php/eliminarMural.php?idMural=' + idMural;
+  }
+}
+const toggleButton = document.querySelector("#theme-toggle");
+
+toggleButton.addEventListener("click", () => {
+  document.body.classList.toggle("dark-theme");
+});
